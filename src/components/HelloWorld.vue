@@ -35,6 +35,11 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created(){
+    this.axios.get("http://localhost:8080/api/todo").then((response) => {
+      console.log(response.data)
+    })
   }
 }
 </script>
